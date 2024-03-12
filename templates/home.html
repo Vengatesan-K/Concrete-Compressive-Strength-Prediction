@@ -1,0 +1,63 @@
+<html>
+<html lang="en">
+<head>
+
+    <link rel="stylesheet" href="{{ url_for('static',filename='style.css')}}">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compressive Strength</title>
+</head>
+<body>
+   
+    <div class="container">
+        <!-- code here -->
+        <div class="card">
+            <div class="card-image">	
+                <h2 class="card-heading">
+                    Concrete Strength Prognosis
+                </h2>
+            </div>
+            <form class="card-form" action="{{ url_for('predict_datapoint')}}" method="POST">
+                <div class="input">
+                    <input name="age" type="number" step="any"  class="input-field" required/>
+                    <label  class="input-label">Age</label>
+                </div>
+                            
+                <div class="input">
+                    <input name="cement_water_ratio" type="number" step="any"  class="input-field" required/>
+                    <label  class="input-label">Water Cement Ratio</label>
+                </div>
+		<div class="input">
+                    <input name="blast_furnace_slag" type="number" step="any"  class="input-field" required/>
+                    <label  class="input-label">Blast Furnace Slag</label>
+                </div>
+	
+		<div class="input">
+                    <input name="super_plasticizer" type="number" step="any"  class="input-field" required/>
+                    <label  class="input-label">Super Plasticizer</label>
+                </div>
+		
+		<div class="input">
+                    <input name="fly_ash" type="number" step="any"  class="input-field" required/>
+                    <label  class="input-label">Fly Ash</label>
+                </div>
+        
+                <div class="input">
+                    <input name="average_aggregate" type="number" step="any"  class="input-field" required/>
+                    <label  class="input-label">Average Aggregate</label>
+                </div>
+		
+                <div class="action">
+                    <button type="submit" class="action-button">Submit</button>
+                </div>
+            </form>
+
+            <center><p style="color: darkred; font-weight: bold;">{{ prediction }}</p>
+		<img src="{{ image }}" alt="{{ prediction }}">
+</center>
+        </div>
+    </div>
+    
+</body>
+</html>
