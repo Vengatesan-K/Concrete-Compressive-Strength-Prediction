@@ -8,4 +8,5 @@ xgboost
 fastapi
 uvicorn
 dill
--e .
+
+# -e .
