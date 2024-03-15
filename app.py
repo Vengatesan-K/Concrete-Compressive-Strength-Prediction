@@ -36,5 +36,5 @@ def predict_datapoint():
         return render_template('home.html', prediction= f"Predicted Concrete Strength is {results[0]} /MPa", image='https://expertcivil.com/wp-content/uploads/2021/05/Concrete-Mixer-750x570.jpg')   
 
 if __name__=="__main__":
-    app.run(host="0.0.0.0",)        
+    app.run(host='0.0.0.0', port=8080)        
 

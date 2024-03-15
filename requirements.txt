@@ -1,3 +1,4 @@
+Flask
 pandas
 numpy
 seaborn
@@ -5,8 +6,6 @@ matplotlib
 scikit-learn
 catboost
 xgboost
-fastapi
-uvicorn
 dill
 
-# -e .
+#-e .
